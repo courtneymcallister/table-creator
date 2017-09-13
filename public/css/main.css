@@ -1,1 +1,11 @@
 
+
+#table input {
+  border: none;
+  width: 50px;
+}
+
+/*#table input:focus {
+  border: none;
+  border-color: none;
+}*/

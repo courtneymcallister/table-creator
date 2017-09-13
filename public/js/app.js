@@ -7,6 +7,8 @@ $(document).ready(function(){
     //get user inputs
     var rows = $('#rows').val();
     var cols = $("#cols").val();
+    var headerType = $("#headerType").val();
+    var borderSize = $("#borderSize").val();
     var caption = $("#caption").val();
 
     //add rows and columns
@@ -18,6 +20,14 @@ $(document).ready(function(){
       }
     }
 
+    //add headers
+    if (headerType == 1 || headerType == 3){
+      $('<thead></thead').prependTo('#table').append($('#table tr:first'));
+    }
+
+    //adjust border size
+    table.border = `${borderSize}px`;
+
     //add caption (optional)
     var newCaption = table.createCaption();
     newCaption.innerHTML = `${caption}`;
@@ -25,8 +35,7 @@ $(document).ready(function(){
 
   $(".clearTable").click(function(){
     table.innerHTML = '';
-    var field = document.getElementsByClassName("showHtmlField")
-    field.innerHTML = '';
+    $(".showHtmlField").innerHTML = '';
   })
 
   $(".showHtml").click(function(){

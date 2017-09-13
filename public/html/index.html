@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,9 +9,18 @@
   </head>
   <body>
     <h3>Table Creator</h3>
+
+    <h4>Table Properties --</h4>
     <div class="userInputs">
       <label>Rows: </label><input type="number" id="rows" value=""><br>
       <label>Columns: </label><input type="number" id="cols" value=""><br>
+      <label>Headers: </label><select id="headerType">
+        <option value="0">None</option>
+        <option value="1">First Row</option>
+        <option value="2">First Column</option>
+        <option value="3">Both</option>
+      </select><br>
+      <label>Border Size: </label><input type="number" id="borderSize" value="1"><br>
       <label>Caption: </label><input type="text" id="caption" value=""><br>
       <button type="button" class='createTable'>Create Table</button>
       <button type="button" class='clearTable'>Clear</button>
