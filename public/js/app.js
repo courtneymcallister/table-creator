@@ -35,11 +35,11 @@ $(document).ready(function(){
 
   $(".clearTable").click(function(){
     table.innerHTML = '';
-    $(".showHtmlField").innerHTML = '';
+    $(".showHtmlField").text('');
   })
 
   $(".showHtml").click(function(){
-    $(".showHtmlField").text($("table").html());
+    $(".showHtmlField").text($("#table").html());
   })
 
 })
