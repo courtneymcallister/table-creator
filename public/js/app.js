@@ -4,6 +4,7 @@ $(document).ready(function(){
 
   $(".createTable").click(function(){
     table.innerHTML = "";
+
     //get user inputs
     var rows = $('#rows').val();
     var cols = $("#cols").val();
@@ -16,7 +17,6 @@ $(document).ready(function(){
       var newRow = table.insertRow(i);
       for(var j = 0; j < cols; j++){
         var newCell = newRow.insertCell(j);
-        newCell.appendChild(document.createElement("input"))
       }
     }
 
@@ -31,15 +31,18 @@ $(document).ready(function(){
     //add caption (optional)
     var newCaption = table.createCaption();
     newCaption.innerHTML = `${caption}`;
+
+    //display the table
+    $('#table').show();
   })
 
   $(".clearTable").click(function(){
-    table.innerHTML = '';
     $(".showHtmlField").text('');
+    $('#table').hide();
   })
 
   $(".showHtml").click(function(){
-    $(".showHtmlField").text($("#table").html());
+    $(".showHtmlField").text($(".preview").html());
   })
 
 })

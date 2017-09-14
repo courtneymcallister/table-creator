@@ -1,8 +1,14 @@
+.preview{
+  width: 500px;
+}
 
+#table {
+  width: 100%;
+}
 
 #table input {
   border: none;
-  width: 50px;
+
 }
 
 /*#table input:focus {
