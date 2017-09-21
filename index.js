@@ -1,10 +1,10 @@
 const express = require('express');
 const server = express();
-const port = 3000;
+const port = 8080;
 
 server.use(express.static(__dirname + '/public'));
 
-server.get('/', function(req, res){
+server.get('/tablecreator', function(req, res){
   res.sendFile('index.html', {root: __dirname + '/public/html'})
 });
 

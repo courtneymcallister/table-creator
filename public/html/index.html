@@ -21,7 +21,7 @@
         <option value="3">Both</option>
       </select><br>
       <label>Border Size: </label><input type="number" id="borderSize" value="1"><br>
-      <label>Caption: </label><input type="text" id="caption" value=""><br>
+      <label>Caption: </label><input type="text" id="caption"><br>
       <button type="button" class='createTable'>Create Table</button>
       <button type="button" class='clearTable'>Clear</button>
       <button type="button" class="showHtml">HTML</button>
@@ -29,7 +29,7 @@
 
     <!-- Start of Table -->
     <div class="preview" role="textbox" contenteditable="true">
-      <table id='table' border="1px" hidden="true">
+      <table id='table' border="1px">
 
       </table>
     </div>
@@ -37,7 +37,7 @@
 
     <!-- Start of HTML Field -->
     <div class="showHtmlField">
-
+      <samp id='htmlOutput'></samp>
     </div>
     <!-- End of HTML Field -->
 
