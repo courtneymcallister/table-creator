@@ -21,9 +21,19 @@ $(document).ready(function(){
       }
     }
 
-    //add headers
-    if (headerType == 1 || headerType == 3){
+    //add headers - theres definitely a more elegant way to do this
+    if (headerType == 1){ //first row
       $('<thead></thead').prependTo('#table').append($('#table tr:first'));
+      $('#table tr:first td').replaceWith('<th></th>')
+    } else if (headerType == 2){ //first column
+      $('<th></th>').prependTo('#table tr');
+      $('#table td:last-child').remove();
+    } else if (headerType == 3){ //both
+      $('<thead></thead').prependTo('#table').append($('#table tr:first'));
+      $('#table tr:first td').replaceWith('<th></th>')
+      $('#table th:last-child').remove();
+      $('<th></th>').prependTo('#table tr');
+      $('#table td:last-child').remove();
     }
 
     //adjust border size
