@@ -13,11 +13,6 @@
 
 }
 
-/*#table input:focus {
-  border: none;
-  border-color: none;
-}*/
-
 .showHtmlField{
   border: 1px solid lightgrey;
   height: 500px;
@@ -33,4 +28,21 @@
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
+}
+
+.userInputs {
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border: 1px solid lightgrey;
+  width: 400px;
+}
+
+.userInputs label, input, select{
+  margin-bottom: 5px;
+}
+
+.userInputs button{
+  font-size: 12px;
 }
