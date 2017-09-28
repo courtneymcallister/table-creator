@@ -24,24 +24,6 @@ $(document).ready(function(){
       }
     }
 
-    $(document).on('click', function(e){
-      if (e.target.tagName == 'TD' || e.target.tagName == 'TH'){
-        $('.alignmentOptions').show();
-      } else {
-        $('.alignmentOptions').hide();
-      }
-
-    })
-
-    // $("table").on('click', function(e) {
-    //     if (e.target.id === 'td') {
-    //         $('.alignmentOptions').show();
-    //     } else {
-    //         $('.alignmentOptions').hide();
-    //     }
-    //
-    // })
-
     //add headers - theres definitely a more elegant way to do this
     if (headerType == 1){ //first row
       $('<thead></thead').prependTo('#table').append($('#table tr:first'));
@@ -63,6 +45,31 @@ $(document).ready(function(){
     //add caption (optional)
     var newCaption = table.createCaption();
     newCaption.innerHTML = `${caption}`;
+
+    //add alignment to each table cell
+    $(document).on('click', function(e){
+      var target = $(e.target);
+      console.log(target.html());
+      if (target.is("td,th") || target.is("#align")){
+        $('.alignmentOptions').show();
+        var cell = target.html();
+        $('.alignLeft').click(function(){
+          // target.css("text-align", "left");
+          cell.style.textAlign = "left";
+        })
+        $('.alignCenter').click(function(){
+          // target.css("text-align", "center");
+          cell.style.textAlign = "center";
+        })
+        $('.alignRight').click(function(){
+          // target.css("text-align", "right");
+          cell.style.textAlign = "right";
+        })
+      } else {
+        $('.alignmentOptions').hide();
+      }
+
+    })
 
     //display the table
     $('#table').show();
