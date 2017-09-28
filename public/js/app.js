@@ -3,6 +3,8 @@ $(document).ready(function(){
   const table = document.getElementById('table');
   $('#table').hide();
   $('.showHtmlField').hide();
+  $('.clearTable').hide();
+  $('.alignmentOptions').hide();
 
   $(".createTable").click(function(){
     table.innerHTML = "";
@@ -21,6 +23,24 @@ $(document).ready(function(){
         var newCell = newRow.insertCell(j);
       }
     }
+
+    $(document).on('click', function(e){
+      if (e.target.tagName == 'TD' || e.target.tagName == 'TH'){
+        $('.alignmentOptions').show();
+      } else {
+        $('.alignmentOptions').hide();
+      }
+
+    })
+
+    // $("table").on('click', function(e) {
+    //     if (e.target.id === 'td') {
+    //         $('.alignmentOptions').show();
+    //     } else {
+    //         $('.alignmentOptions').hide();
+    //     }
+    //
+    // })
 
     //add headers - theres definitely a more elegant way to do this
     if (headerType == 1){ //first row
@@ -46,13 +66,18 @@ $(document).ready(function(){
 
     //display the table
     $('#table').show();
-
+    $('.createTable').hide();
+    $('.clearTable').show();
 
   })
+
+
 
   $(".clearTable").click(function(){
     $(".showHtmlField").text('').hide();
     $('#table').hide();
+    $('.createTable').show();
+    $('.clearTable').hide();
 
   })
 
